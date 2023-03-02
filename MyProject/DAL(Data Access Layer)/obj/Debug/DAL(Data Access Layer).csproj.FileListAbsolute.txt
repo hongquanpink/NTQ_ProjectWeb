@@ -1,0 +1,12 @@
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll.config
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\EntityFramework.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\EntityFramework.SqlServer.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\EntityFramework.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\EntityFramework.SqlServer.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb

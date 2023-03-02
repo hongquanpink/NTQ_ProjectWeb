@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NTQ_projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NTQ_project.dbo.Medias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Medias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ProductsID" Type="int" />
+    <Property Name="Path" Type="varchar" MaxLength="50" />
+    <Property Name="CreatAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Slug" Type="varchar" MaxLength="100" />
+    <Property Name="Detail" Type="varchar" MaxLength="100" />
+    <Property Name="Trending" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="NumberViews" Type="float" />
+    <Property Name="Price" Type="float" />
+    <Property Name="MetaKey" Type="varchar" MaxLength="100" />
+    <Property Name="CreatAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+    <Property Name="DeleteAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Reviews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+    <Property Name="DeleteAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatAt" Type="datetime" />
+    <Property Name="UpdateAt" Type="datetime" />
+    <Property Name="DeleteAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WishList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Medias_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Medias" Type="Self.Medias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medias">
+        <PropertyRef Name="ProductsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reviews_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reviews_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WishList_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="WishList" Type="Self.WishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WishList">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NTQ_projectModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WishList" EntityType="Self.WishList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medias" EntityType="Self.Medias" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Medias].[Id] AS [Id], 
+    [Medias].[ProductsID] AS [ProductsID], 
+    [Medias].[Path] AS [Path], 
+    [Medias].[CreatAt] AS [CreatAt], 
+    [Medias].[UpdateAt] AS [UpdateAt]
+    FROM [dbo].[Medias] AS [Medias]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Medias_Products" Association="Self.FK_Medias_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Medias" EntitySet="Medias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Category" Association="Self.FK_Products_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reviews_Products" Association="Self.FK_Reviews_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reviews_User" Association="Self.FK_Reviews_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WishList_User" Association="Self.FK_WishList_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="WishList" EntitySet="WishList" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

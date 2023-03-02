@@ -1,0 +1,86 @@
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\BO(Business Logic Layer).dll.config
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\BO(Business Logic Layer).dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\BO(Business Logic Layer).pdb
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\csc.exe
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\csc.exe.config
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\csc.rsp
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\csi.exe
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\csi.exe.config
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\csi.rsp
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.Managed.Core.targets
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.AppContext.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Collections.Immutable.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Console.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Globalization.Calendars.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.IO.Compression.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.IO.FileSystem.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Net.Http.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Net.Sockets.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Reflection.Metadata.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.ValueTuple.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Xml.XmlDocument.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Xml.XPath.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\vbc.exe
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\vbc.exe.config
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\vbc.rsp
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\VBCSCompiler.exe
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\roslyn\VBCSCompiler.exe.config
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\Antlr3.Runtime.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\Microsoft.Web.Infrastructure.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\Newtonsoft.Json.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Helpers.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Mvc.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Optimization.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Razor.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.WebPages.Deployment.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.WebPages.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.WebPages.Razor.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\WebGrease.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Helpers.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Mvc.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Optimization.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.Razor.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.WebPages.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.WebPages.Deployment.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\System.Web.WebPages.Razor.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\Newtonsoft.Json.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\Antlr3.Runtime.pdb
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\obj\Debug\BO(Business Logic Layer).csproj.AssemblyReference.cache
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\obj\Debug\BO(Business Logic Layer).csproj.CoreCompileInputs.cache
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\obj\Debug\BO(Business Logic Layer).csproj.CopyComplete
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\obj\Debug\BO(Business Logic Layer).dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\obj\Debug\BO(Business Logic Layer).pdb
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\DAL(Data Access Layer).dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\EntityFramework.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\EntityFramework.SqlServer.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\DAL(Data Access Layer).pdb
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\DAL(Data Access Layer).dll.config
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\EntityFramework.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\EntityFramework.SqlServer.xml

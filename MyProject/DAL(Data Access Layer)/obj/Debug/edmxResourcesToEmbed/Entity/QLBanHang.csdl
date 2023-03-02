@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NTQ_projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreatAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_Category" FromRole="Category" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Slug" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Trending" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="NumberViews" Type="Double" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="MetaKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+    <Property Name="DeleteAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Products_Category" FromRole="Products" ToRole="Category" />
+    <NavigationProperty Name="Medias" Relationship="Self.FK_Medias_Products" FromRole="Products" ToRole="Medias" />
+    <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_Products" FromRole="Products" ToRole="Reviews" />
+  </EntityType>
+  <EntityType Name="Reviews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreatAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+    <Property Name="DeleteAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Reviews_Products" FromRole="Reviews" ToRole="Products" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Reviews_User" FromRole="Reviews" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreatAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+    <Property Name="DeleteAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_User" FromRole="User" ToRole="Reviews" />
+    <NavigationProperty Name="WishList" Relationship="Self.FK_WishList_User" FromRole="User" ToRole="WishList" />
+  </EntityType>
+  <EntityType Name="WishList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_WishList_User" FromRole="WishList" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Medias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProductsID" Type="Int32" />
+    <Property Name="Path" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Medias_Products" FromRole="Medias" ToRole="Products" />
+  </EntityType>
+  <Association Name="FK_Products_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medias_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Medias" Type="Self.Medias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medias">
+        <PropertyRef Name="ProductsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reviews_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reviews_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WishList_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="WishList" Type="Self.WishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WishList">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NTQ_projectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="Reviews" EntityType="Self.Reviews" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="WishList" EntityType="Self.WishList" />
+    <EntitySet Name="Medias" EntityType="Self.Medias" />
+    <AssociationSet Name="FK_Products_Category" Association="Self.FK_Products_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medias_Products" Association="Self.FK_Medias_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Medias" EntitySet="Medias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reviews_Products" Association="Self.FK_Reviews_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reviews_User" Association="Self.FK_Reviews_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WishList_User" Association="Self.FK_WishList_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="WishList" EntitySet="WishList" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
