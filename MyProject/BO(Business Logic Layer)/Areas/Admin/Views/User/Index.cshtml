@@ -1,0 +1,66 @@
+﻿@*@model DAL_Data_Access_Layer_.EF.User*@
+@model PagedList.IPagedList<DAL_Data_Access_Layer_.EF.User>
+@using PagedList.Mvc
+
+
+@{
+    ViewBag.Title = "Quản lí người dùng";
+    Layout = "~/Areas/Admin/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh Sách Người Dùng</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>UserName</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>CreatAt</th>
+                        <th>UpdateAt</th>
+                        <th>DeleteAt</th>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>UserName</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>CreatAt</th>
+                        <th>UpdateAt</th>
+                        <th>DeleteAt</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in  Model)
+                    {
+                    <tr>
+                        <td>
+                            <a href="/User/Edit/@item.Id">Sửa</a>
+                            <a href="/User/Edit/@item.Id">Xóa</a>
+                        </td>
+                        <td>@item.Username</td>
+                        <td>@item.Role</td>
+                        <td>@item.Email</td>
+                        <td>@item.Status</td>
+                        <td>@item.CreatAt</td>
+                        <td>@item.UpdateAt</td>
+                        <td>@item.DeleteAt</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</div>
+
+

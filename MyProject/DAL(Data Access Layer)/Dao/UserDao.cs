@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL_Data_Access_Layer_.EF;
+using PagedList; 
 
 namespace DAL_Data_Access_Layer_.Dao
 {
@@ -19,6 +20,11 @@ namespace DAL_Data_Access_Layer_.Dao
             db.User.Add(entity);
             db.SaveChanges();
             return entity.Id;
+        }
+
+        public IEnumerable<User> ListAllPaging(int page , int pageSize )
+        {
+            return db.User.OrderByDescending(x => x.CreatAt).ToPagedList(page,pageSize);
         }
 
         public User GetByID(string userName)

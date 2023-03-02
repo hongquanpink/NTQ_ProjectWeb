@@ -20,22 +20,30 @@ namespace DAL_Data_Access_Layer_.EF
         public int Id { get; set; }
 
         [StringLength(50)]
+        
         public string Username { get; set; }
 
         [StringLength(50)]
+        
         public string Password { get; set; }
 
+        
         public int? Role { get; set; }
 
         [StringLength(50)]
+        
         public string Email { get; set; }
 
+        
         public bool? Status { get; set; }
 
+        
         public DateTime CreatAt { get; set; }
 
+        
         public DateTime UpdateAt { get; set; }
 
+        
         public DateTime DeleteAt { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

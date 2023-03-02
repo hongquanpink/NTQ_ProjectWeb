@@ -84,3 +84,7 @@ D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\DAL(Data Access Layer).dll.config
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\EntityFramework.xml
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\EntityFramework.SqlServer.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\PagedList.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\PagedList.Mvc.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\PagedList.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\PagedList.Mvc.xml

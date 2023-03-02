@@ -10,3 +10,7 @@ D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\De
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\PagedList.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\PagedList.Mvc.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\PagedList.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\DAL(Data Access Layer)\bin\Debug\PagedList.Mvc.xml
