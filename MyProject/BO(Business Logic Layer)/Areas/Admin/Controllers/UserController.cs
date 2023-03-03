@@ -47,5 +47,12 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
             }
             return View("Index");
         }
+
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().ViewDetail(id);
+
+            return View(user);      
+        }
     }
 }

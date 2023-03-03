@@ -2,11 +2,11 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_EditLayout.cshtml";
 }
 
 
-<h1>THÊM NGƯỜI DÙNG</h1>
+<h1>CẬP NHẬT NGƯỜI DÙNG</h1>
 <div class="row" style="border:3px solid #ccc;width:99%;margin-left:5px;">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -16,12 +16,12 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        @using (Html.BeginForm("Create", "User", FormMethod.Post))
+                        @using (Html.BeginForm("Edit", "User", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
 
                             <div class="form-horizontal">
-                                <h4>THÊM</h4>
+                                <h4>SỬA</h4>
                                 <hr />
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 <div class="form-group">
@@ -89,7 +89,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="CREATE" class="btn btn-default" />
+                                        <input type="submit" value="UPDATE" class="btn btn-default" />
                                     </div>
                                 </div>
                             </div>

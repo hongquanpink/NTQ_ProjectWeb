@@ -13,8 +13,10 @@
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Danh Sách Người Dùng</h6>
     </div>
+
     <div class="card-body">
         <div class="table-responsive">
+
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
@@ -40,24 +42,27 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    @foreach (var item in  Model)
+                    @foreach (var item in Model)
                     {
-                    <tr>
-                        <td>
-                            <a href="/User/Edit/@item.Id">Sửa</a>
-                            <a href="/User/Edit/@item.Id">Xóa</a>
-                        </td>
-                        <td>@item.Username</td>
-                        <td>@item.Role</td>
-                        <td>@item.Email</td>
-                        <td>@item.Status</td>
-                        <td>@item.CreatAt</td>
-                        <td>@item.UpdateAt</td>
-                        <td>@item.DeleteAt</td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <a class="btn btn-primary" href="/Admin/User/Edit/@item.Id">Sửa</a>
+                                <a class="btn btn-primary" href="User/Edit/@item.Id">Xóa</a>
+                            </td>
+                            <td>@item.Username</td>
+                            <td>@item.Role</td>
+                            <td>@item.Email</td>
+                            <td>@item.Status</td>
+                            <td>@item.CreatAt</td>
+                            <td>@item.UpdateAt</td>
+                            <td>@item.DeleteAt</td>
+                        </tr>
                     }
                 </tbody>
             </table>
+            <a class="btn btn-primary" href="/Admin/User/Creat">Create</a>
+
+
             @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
         </div>
     </div>

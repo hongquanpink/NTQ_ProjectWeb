@@ -22,6 +22,32 @@ namespace DAL_Data_Access_Layer_.Dao
             return entity.Id;
         }
 
+        public bool Update(User entity)
+        {
+            try
+            {
+                var user = db.User.Find(entity.Id);
+                user.Username = entity.Username;
+                user.Role = entity.Role;
+                user.Email = entity.Email;
+                user.CreatAt = DateTime.Now;
+                user.UpdateAt = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                //logging code 
+                return false;
+            }
+        }
+        public User ViewDetail(int id)
+        {
+            return db.User.Find(id);
+        }
+
+
+        //Ham dung de phan trang
         public IEnumerable<User> ListAllPaging(int page , int pageSize )
         {
             return db.User.OrderByDescending(x => x.CreatAt).ToPagedList(page,pageSize);
