@@ -11,9 +11,16 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Models
     {
         [Required(ErrorMessage = "Mời bạn nhập UserName")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Mời bạn nhập Password")]
+
+
+        [RegularExpression(@"^.{8,20}$", ErrorMessage = "{0} chỉ từ 8 đến 20 ký tự.")]
+        [Required(ErrorMessage = "Password không được để trống!")]
         public string Password { get; set; }
-        [Required(ErrorMessage = "Mời bạn nhập Email")]
+
+
+        [Required(ErrorMessage = "Email không được để trống!")]
+        [EmailAddress(ErrorMessage = "Email chưa đúng định dạng.")]
+        [RegularExpression(@"^.{10,30}$", ErrorMessage = "{0} chỉ từ 10 đến 30 ký tự.")]
         public string Email { get; set; }
     }
 }

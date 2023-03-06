@@ -135,6 +135,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -1891,6 +1892,7 @@
     <Content Include="Content\js\jquery-3.0.0.min.js" />
     <Content Include="Content\js\jquery.mCustomScrollbar.concat.min.js" />
     <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Content\js\jquery.validate.js" />
     <Content Include="Content\js\modernizer.js" />
     <Content Include="Content\js\plugin.js" />
@@ -2101,6 +2103,8 @@
     <Content Include="Areas\Admin\Views\User\Creat.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_EditLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Creat.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

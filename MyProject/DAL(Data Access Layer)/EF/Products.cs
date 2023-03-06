@@ -15,7 +15,6 @@ namespace DAL_Data_Access_Layer_.EF
             Reviews = new HashSet<Reviews>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public int? CategoryID { get; set; }
@@ -28,7 +27,7 @@ namespace DAL_Data_Access_Layer_.EF
 
         public int? Trending { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         public double? NumberViews { get; set; }
 

@@ -13,6 +13,8 @@ namespace BO_Business_Logic_Layer_
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

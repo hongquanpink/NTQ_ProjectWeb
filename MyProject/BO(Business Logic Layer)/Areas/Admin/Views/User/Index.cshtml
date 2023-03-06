@@ -45,10 +45,17 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td id="row_@item.Id">
                                 <a class="btn btn-primary" href="/Admin/User/Edit/@item.Id">Sửa</a>
-                                <a class="btn btn-primary" href="User/Edit/@item.Id">Xóa</a>
+                                |
+                                @Ajax.ActionLink("Xóa", "Delete", new {@id=item.Id} ,new AjaxOptions
+                           {
+                               Confirm="Bạn có muốn xóa bản ghi này không",
+                               OnComplete = "$(' row_"+@item.Id+" ').remove()",
+                               HttpMethod = "Delete"
+                           })
                             </td>
+
                             <td>@item.Username</td>
                             <td>@item.Role</td>
                             <td>@item.Email</td>
@@ -61,7 +68,6 @@
                 </tbody>
             </table>
             <a class="btn btn-primary" href="/Admin/User/Creat">Create</a>
-
 
             @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
         </div>

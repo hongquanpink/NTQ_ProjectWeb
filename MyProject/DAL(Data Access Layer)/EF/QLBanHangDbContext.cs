@@ -8,14 +8,14 @@ namespace DAL_Data_Access_Layer_.EF
     public partial class QLBanHangDbContext : DbContext
     {
         public QLBanHangDbContext()
-            : base("name=QLBanHang")
+            : base("name=QLBanHangDbContext")
         {
         }
 
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Reviews> Reviews { get; set; }
-        //public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<WishList> WishList { get; set; }
         public virtual DbSet<Medias> Medias { get; set; }
