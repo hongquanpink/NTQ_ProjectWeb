@@ -35,6 +35,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                 var encrytedMd5Pas = Encryptor.Hash(user.Password);
                 user.Password = encrytedMd5Pas;
 
+                user.CreatAt = DateTime.Now;
                 long ma = dao.Insert(user);
                 if (ma > 0)
                 {
@@ -66,6 +67,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                 //    var encrytedMd5Pas = Encryptor.Hash(user.Password);
                 //    user.Password = encrytedMd5Pas;
                 //}
+                user.UpdateAt = DateTime.Now;
                 var result = dao.Update(user);
                 if (result)
                 {
@@ -81,7 +83,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
 
         [HttpDelete]
         public ActionResult Delete(int Id)
-        {
+        {        
             new UserDao().Delete(Id);
             return RedirectToAction("Index");
         }

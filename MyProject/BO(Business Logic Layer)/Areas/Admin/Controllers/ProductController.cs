@@ -15,6 +15,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
         public ActionResult Index(int pages = 1, int pageSizes = 10)
         {
             var dao = new ProductDao();
+            
             var model = dao.ListAllPaging(pages, pageSizes);
             return View(model);
         }
@@ -30,10 +31,9 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new ProductDao();
+               var dao = new ProductDao();
 
-
-
+               product.CreatAt = DateTime.Now;
                long ma = dao.Insert(product);
                 if (ma > 0)
                 {
@@ -46,5 +46,40 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
             }
             return View("Index");
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var product = new ProductDao().ViewDetail(id);
+            return View(product);
+        }
+        [HttpPost]
+        public ActionResult Edit(Products products)
+        {
+            if(ModelState.IsValid)
+            {
+                var dao = new ProductDao();
+               
+                var result = dao.Update(products);
+                if (result)
+                {
+                    return RedirectToAction("Index", "Product");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Sua san pham thanh cong");
+                }
+            }
+            return RedirectToAction("Index","Product");
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(int Id)
+        {
+            new ProductDao().Delete(Id);
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

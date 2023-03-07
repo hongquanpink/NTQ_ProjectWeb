@@ -11,7 +11,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh Sách Người Dùng</h6>
+        <h6 class="m-0 font-weight-bold text-primary">DANH SÁCH NGƯỜI DÙNG</h6>
     </div>
 
     <div class="card-body">
@@ -48,10 +48,10 @@
                             <td id="row_@item.Id">
                                 <a class="btn btn-primary" href="/Admin/User/Edit/@item.Id">Sửa</a>
                                 |
-                                @Ajax.ActionLink("Xóa", "Delete", new {@id=item.Id} ,new AjaxOptions
+                                @Ajax.ActionLink("Xóa", "Delete", new { @id = item.Id }, new AjaxOptions
                            {
-                               Confirm="Bạn có muốn xóa bản ghi này không",
-                               OnComplete = "$(' row_"+@item.Id+" ').remove()",
+                               Confirm = "Bạn có muốn xóa bản ghi này không",
+                               OnComplete = "$(' row_" + @item.Id + " ').remove()",
                                HttpMethod = "Delete"
                            })
                             </td>
@@ -60,9 +60,9 @@
                             <td>@item.Role</td>
                             <td>@item.Email</td>
                             <td>@item.Status</td>
-                            <td>@item.CreatAt</td>
-                            <td>@item.UpdateAt</td>
-                            <td>@item.DeleteAt</td>
+                            <td>@(item.CreatAt == null ? "" :  item.CreatAt.Value.ToString("dd/MM/yyyy"))</td>
+                            <td>@(item.UpdateAt == null ? "" : item.UpdateAt.Value.ToString("dd/MM/yyyy"))</td>
+                            <td>@(item.DeleteAt == null ? "" : item.DeleteAt.Value.ToString("dd/MM/yyyy"))</td>
                         </tr>
                     }
                 </tbody>

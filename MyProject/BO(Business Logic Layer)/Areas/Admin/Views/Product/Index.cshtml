@@ -2,13 +2,13 @@
 @using PagedList.Mvc
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Quản lí sản phẩm ";
     Layout = "~/Areas/Admin/Views/Shared/_UserLayout.cshtml";
 }
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh Sách Người Dùng</h6>
+        <h6 class="m-0 font-weight-bold text-primary">DANH SÁCH SẢN PHẨM</h6>
     </div>
 
     <div class="card-body">
@@ -18,9 +18,11 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Lug</th>
+                        <th>CategoryID</th>
+                        <th>SLug</th>
                         <th>Detail</th>
                         <th>Trending</th>
+                        <th>Status</th>
                         <th>NumberViews</th>
                         <th>Price</th>
                         <th>MetaKey</th>
@@ -31,9 +33,11 @@
                 <tfoot>
                     <tr>
                         <th>#</th>
+                        <th>CategoryID</th>
                         <th>Slug</th>
                         <th>Detail</th>
                         <th>Trending</th>
+                        <th>Status</th>
                         <th>NumberViews</th>
                         <th>Price</th>
                         <th>MetaKey</th>
@@ -46,31 +50,30 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            @*<td id="row_@item.Id">
-                                <a class="btn btn-primary" href="/Admin/User/Edit/@item.Id">Sửa</a>
+                            <td id="row_@item.Id">
+                                <a class="btn btn-primary" href="/Admin/Product/Edit/@item.Id">SỬA</a>
                                 |
                                 @Ajax.ActionLink("Xóa", "Delete", new { @id = item.Id }, new AjaxOptions
-                           {
-                               Confirm = "Bạn có muốn xóa bản ghi này không",
-                               OnComplete = "$(' row_" + @item.Id + " ').remove()",
-                               HttpMethod = "Delete"
-                           })
-                            </td>*@
+                                {
+                                    Confirm = "Bạn có muốn xóa bản ghi này không",
+                                    OnComplete = "$(' row_" + @item.Id + " ').remove()",
+                                    HttpMethod = "Delete"
+                                })
+                                
 
-                            <th id="@item.Id">
-                                <a>Sửa</a>
-                                <a>Xóa</a>
-                            </th>
+                            </td>
 
-                            <th>@item.Slug</th>
-                            <th>@item.Detail</th>
-                            <th>@item.Trending</th>
-                            <th>@item.NumberViews</th>
-                            <th>@item.Price</th>
-                            <th>@item.MetaKey</th>
-                            <th>@item.CreatAt</th>
-                            <th>@item.UpdateAt</th>
-                            <th>@item.DeleteAt</th>
+                            <td>@item.CategoryID</td>
+                            <td>@item.Slug</td>
+                            <td>@item.Detail</td>
+                            <td>@item.Trending</td>
+                            <td>@item.Status</td>
+                            <td>@item.NumberViews</td>
+                            <td>@item.Price</td>
+                            <td>@item.MetaKey</td>
+                            <td>@(item.CreatAt == null ? "" :  item.CreatAt.Value.ToString("dd/MM/yyyy"))</td>
+                            <td>@(item.UpdateAt == null ? "" : item.UpdateAt.Value.ToString("dd/MM/yyyy"))</td>
+                            <td>@(item.DeleteAt == null ? "" : item.DeleteAt.Value.ToString("dd/MM/yyyy"))</td>
                         </tr>
                     }
                 </tbody>
