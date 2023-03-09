@@ -24,10 +24,31 @@ namespace DAL_Data_Access_Layer_.Dao
             return entity.Id;
         }
 
-        public IEnumerable<Products> ListAllPaging(int page, int pageSize)
+
+
+        public IEnumerable<Products> ListAllPaging(string Trending, string Nottrend ,string searchString ,int page, int pageSize)
         {
             IQueryable<Products> model = db.Products;
-            return model.OrderByDescending(x => x.CreatAt).ToPagedList(page, pageSize);
+            if (!string.IsNullOrEmpty(searchString) || !string.IsNullOrEmpty(Trending) || !string.IsNullOrEmpty(Nottrend) )
+            {
+                model = model.Where(x => x.ProductName.Contains(searchString));
+                if(Trending != null )
+                {
+                    model = model.Where(x => x.Trending == true);
+                }
+                if (Nottrend != null)
+                {
+                    model = model.Where(x => x.Trending == false);
+                }
+                if(model== null)
+                {
+                    return null;
+                }
+
+                return model.OrderByDescending(x => x.NumberViews).ToPagedList(page, pageSize);
+            }
+
+            return model.OrderByDescending(x => x.NumberViews).ToPagedList(page, pageSize);
         }
         public Products getByID(int id)
         {
@@ -44,6 +65,8 @@ namespace DAL_Data_Access_Layer_.Dao
             {
                 var products = db.Products.Find(entity.Id);
                 products.CategoryID = entity.CategoryID;
+                products.ProductName = entity.ProductName;
+                products.Path = entity.Path;
                 products.Slug = entity.Slug;
                 products.Detail = entity.Detail;
                 products.Trending = entity.Trending;

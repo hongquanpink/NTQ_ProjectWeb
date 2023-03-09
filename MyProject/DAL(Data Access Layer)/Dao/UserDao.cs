@@ -49,16 +49,56 @@ namespace DAL_Data_Access_Layer_.Dao
             return 1;
         }
 
-        //Ham dung de phan trang
-        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        //Ham dung de phan trang,fiter
+        public IEnumerable<User> ListAllPaging(string active, string inActive, string admin, string user, string searchString, int page, int pageSize)
         {
-            return db.User.OrderByDescending(x => x.CreatAt).ToPagedList(page, pageSize);
+            IQueryable<User> model = db.User;
+            if (!string.IsNullOrEmpty(searchString) || !string.IsNullOrEmpty(active) || !string.IsNullOrEmpty(inActive) || !string.IsNullOrEmpty(admin) || !string.IsNullOrEmpty(user))
+            {
+                model = model.Where(x => x.Username.Contains(searchString));
+                if (active != null)
+                {
+                    model = model.Where(x => x.Status == true);
+                }
+                if (inActive != null)
+                {
+                    model = model.Where(x => x.Status == false);
+                }
+                if (admin != null)
+                {
+                    model = model.Where(x => x.Role == 1);
+                }
+                if (user != null)
+                {
+                    model = model.Where(x => x.Role == 0);
+                }
+                if (model == null)
+                {
+                    return null;
+                }
+                return model.OrderByDescending(x => x.CreatAt).ToPagedList(page, pageSize);
+            }
+            return model.OrderByDescending(x => x.CreatAt).ToPagedList(page, pageSize);
         }
 
         public User ViewDetail(int id)
         {
             return db.User.Find(id);
         }
+
+        public bool CheckUserName(string userName)
+        {
+            var name = db.User.SingleOrDefault(x => x.Username == userName);
+            if (name == null) return true;
+            return false;
+        }
+        public bool CheckEmail(string email)
+        {
+            var name = db.User.SingleOrDefault(x => x.Email == email);
+            if (name == null) return true;
+            return false;
+        }
+
 
         public bool Update(User entity)
         {

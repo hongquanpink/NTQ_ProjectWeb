@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model PagedList.IPagedList<DAL_Data_Access_Layer_.EF.Products>
+@using PagedList.Mvc;
+
+
+<!-- product section start -->
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <div class="span9">
+                
+                <h4>List Products (Nội Thất Gia Đình) </h4>
+                <ul class="thumbnails">
+                    @foreach (var item in Model)
+                    {
+                        <li class="span4">
+                            <div class="thumbnail">
+                                <a href="product_details.html"><img src="@item.Path" alt="" /></a>
+                                <div class="caption">
+                                    <h5>@item.ProductName</h5>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text.
+                                    </p>
+
+                                    <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.Price</a></h4>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    
+                </ul>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+        </div>
+    </div>
+</div>

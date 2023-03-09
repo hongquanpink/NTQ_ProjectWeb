@@ -18,7 +18,8 @@ namespace BO_Business_Logic_Layer_
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "BO_Business_Logic_Layer_" }
             );
         }
     }

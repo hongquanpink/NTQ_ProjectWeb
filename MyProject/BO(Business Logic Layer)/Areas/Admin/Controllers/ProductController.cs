@@ -12,11 +12,11 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         // GET: Admin/Product
-        public ActionResult Index(int pages = 1, int pageSizes = 10)
+        public ActionResult Index(string isTrending,string notTrend,string searchString,int pages = 1, int pageSizes = 10)
         {
             var dao = new ProductDao();
             
-            var model = dao.ListAllPaging(pages, pageSizes);
+            var model = dao.ListAllPaging(isTrending, notTrend, searchString,pages, pageSizes);
             return View(model);
         }
 
@@ -41,7 +41,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Them san pham thanh cong");
+                    ModelState.AddModelError("", "Them san pham k thanh cong");
                 }
             }
             return View("Index");
@@ -67,7 +67,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Sua san pham thanh cong");
+                    ModelState.AddModelError("", "Sua san pham k thanh cong");
                 }
             }
             return RedirectToAction("Index","Product");

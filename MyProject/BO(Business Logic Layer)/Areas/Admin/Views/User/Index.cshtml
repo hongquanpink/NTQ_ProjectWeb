@@ -1,5 +1,4 @@
-﻿@*@model DAL_Data_Access_Layer_.EF.User*@
-@model PagedList.IPagedList<DAL_Data_Access_Layer_.EF.User>
+﻿@model PagedList.IPagedList<DAL_Data_Access_Layer_.EF.User>
 @using PagedList.Mvc
 
 
@@ -15,6 +14,29 @@
     </div>
 
     <div class="card-body">
+        @using (Html.BeginForm("Index", "User", FormMethod.Get))
+        {
+            @Html.ValidationSummary(false,"", new { @class ="text-danger"});
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <input type="text" name="searchString" />
+                        |
+                        <button class="btn btn-outline-primary" type="submit">
+                            <img src="~/Content/images/search-icon.png" />
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <span>Status:</span> <span style="margin:0 5px 0 20px">Active</span> <input groupname="checkStatus" type="checkbox" name="active" /> <span style="margin:0 5px 0 20px">InActive</span> <input groupname="checkStatus" type="checkbox" name="inActive" />
+                    </div>
+                    <div class="input-group">
+                        <span>Role:</span> <span style="margin:0 5px 0 33px">Admin</span> <input groupname="checkRole" type="checkbox" name="admin" /> <span style="margin:0 5px 0 20px">User</span> <input groupname="checkRole" type="checkbox" name="user" />
+                    </div>
+
+                </div>
+            </div>
+        }
+
         <div class="table-responsive">
 
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -60,7 +82,7 @@
                             <td>@item.Role</td>
                             <td>@item.Email</td>
                             <td>@item.Status</td>
-                            <td>@(item.CreatAt == null ? "" :  item.CreatAt.Value.ToString("dd/MM/yyyy"))</td>
+                            <td>@(item.CreatAt == null ? "" : item.CreatAt.Value.ToString("dd/MM/yyyy"))</td>
                             <td>@(item.UpdateAt == null ? "" : item.UpdateAt.Value.ToString("dd/MM/yyyy"))</td>
                             <td>@(item.DeleteAt == null ? "" : item.DeleteAt.Value.ToString("dd/MM/yyyy"))</td>
                         </tr>

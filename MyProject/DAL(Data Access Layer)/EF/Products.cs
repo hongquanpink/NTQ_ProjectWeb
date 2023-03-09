@@ -19,13 +19,16 @@ namespace DAL_Data_Access_Layer_.EF
 
         public int? CategoryID { get; set; }
 
+        public string  ProductName { get; set; }
+        public string  Path { get; set; }
+
         [StringLength(100)]
         public string Slug { get; set; }
 
         [StringLength(100)]
         public string Detail { get; set; }
 
-        public int? Trending { get; set; }
+        public bool  Trending { get; set; }
 
         public bool Status { get; set; }
 

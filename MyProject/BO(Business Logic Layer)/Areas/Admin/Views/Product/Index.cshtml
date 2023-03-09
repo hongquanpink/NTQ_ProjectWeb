@@ -12,13 +12,34 @@
     </div>
 
     <div class="card-body">
+        @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <input type="text" name="searchString" />
+                        |
+                        <button class="btn btn-outline-primary" type="submit">
+                            <img src="~/Content/images/search-icon.png" />
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <span>Trending:</span> <span style="margin:0 5px 0 20px">NotTrend</span> <input groupname="checkStatus" type="checkbox" name="notTrend" /> <span style="margin:0 5px 0 20px">IsTrending</span> <input groupname="checkStatus" type="checkbox" name="isTrending" />
+                    </div>
+
+
+                </div>
+            </div>
+        }
         <div class="table-responsive">
 
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>CategoryID</th>
+                        <th>CateID</th>
+                        <th>ProductName</th>
+                        <th>Images</th>
                         <th>SLug</th>
                         <th>Detail</th>
                         <th>Trending</th>
@@ -33,7 +54,9 @@
                 <tfoot>
                     <tr>
                         <th>#</th>
-                        <th>CategoryID</th>
+                        <th>CateID</th>
+                        <th>ProductName</th>
+                        <th>Images</th>
                         <th>Slug</th>
                         <th>Detail</th>
                         <th>Trending</th>
@@ -59,11 +82,12 @@
                                     OnComplete = "$(' row_" + @item.Id + " ').remove()",
                                     HttpMethod = "Delete"
                                 })
-                                
 
                             </td>
 
                             <td>@item.CategoryID</td>
+                            <td>@item.ProductName</td>
+                            <td><img src="@item.Path" /></td>
                             <td>@item.Slug</td>
                             <td>@item.Detail</td>
                             <td>@item.Trending</td>
