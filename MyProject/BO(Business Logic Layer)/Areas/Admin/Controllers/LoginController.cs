@@ -18,19 +18,19 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult Login(LoginModel model)
+        public ActionResult Login(LoginModel loginModel)
         {
             if (!ModelState.IsValid)
             {
                 return View("Index");
             }
             var dao = new UserDao();
-            var loginResult = dao.Login(model.Password, model.Email);
+            var loginResult = dao.Login(loginModel.Password, loginModel.Email);
 
             switch (loginResult)
             {
                 case 1:
-                    var user = dao.GetByEmail(model.Email);
+                    var user = dao.GetByEmail(loginModel.Email);
                     var userSession = new UserLogin
                     {
                         UserName = user.Username,

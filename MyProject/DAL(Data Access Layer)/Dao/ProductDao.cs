@@ -17,11 +17,11 @@ namespace DAL_Data_Access_Layer_.Dao
             db = new QLBanHangDbContext();
         }
 
-        public long Insert(Products entity)
+        public long Insert(Products products)
         {
-            db.Products.Add(entity);
+            db.Products.Add(products);
             db.SaveChanges();
-            return entity.Id;
+            return products.Id;
         }
 
 
@@ -59,21 +59,21 @@ namespace DAL_Data_Access_Layer_.Dao
         {
             return db.Products.Find(id);
         }
-        public bool Update(Products entity)
+        public bool Update(Products product)
         {
             try
             {
-                var products = db.Products.Find(entity.Id);
-                products.CategoryID = entity.CategoryID;
-                products.ProductName = entity.ProductName;
-                products.Path = entity.Path;
-                products.Slug = entity.Slug;
-                products.Detail = entity.Detail;
-                products.Trending = entity.Trending;
-                products.Status = entity.Status;
-                products.NumberViews = entity.NumberViews;
-                products.Price = entity.Price;
-                products.MetaKey = entity.MetaKey;
+                var products = db.Products.Find(product.Id);
+                products.CategoryID = product.CategoryID;
+                products.ProductName = product.ProductName;
+                products.Path = product.Path;
+                products.Slug = product.Slug;
+                products.Detail = product.Detail;
+                products.Trending = product.Trending;
+                products.Status = product.Status;
+                products.NumberViews = product.NumberViews;
+                products.Price = product.Price;
+                products.MetaKey = product.MetaKey;
                 products.CreatAt = DateTime.Now;
                 products.UpdateAt = DateTime.Now;
                 products.DeleteAt = DateTime.Now;

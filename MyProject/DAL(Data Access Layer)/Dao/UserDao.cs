@@ -14,11 +14,11 @@ namespace DAL_Data_Access_Layer_.Dao
             db = new QLBanHangDbContext();
         }
 
-        public long Insert(User entity)
+        public long Insert(User user)
         {
-            db.User.Add(entity);
+            db.User.Add(user);
             db.SaveChanges();
-            return entity.Id;
+            return user.Id;
         }
 
         public User GetByID(string userName)
@@ -100,20 +100,20 @@ namespace DAL_Data_Access_Layer_.Dao
         }
 
 
-        public bool Update(User entity)
+        public bool Update(User user)
         {
             try
             {
-                var user = db.User.Find(entity.Id);
-                user.Username = entity.Username;
-                if (!string.IsNullOrEmpty(entity.Password))
+                var users = db.User.Find(user.Id);
+                users.Username = user.Username;
+                if (!string.IsNullOrEmpty(user.Password))
                 {
-                    user.Password = entity.Password;
+                    user.Password = user.Password;
                 }
-                user.Role = entity.Role;
-                user.Email = entity.Email;
-                user.CreatAt = DateTime.Now;
-                user.UpdateAt = DateTime.Now;
+                users.Role = user.Role;
+                users.Email = user.Email;
+                users.CreatAt = DateTime.Now;
+                users.UpdateAt = DateTime.Now;
                 db.SaveChanges();
                 return true;
             }
