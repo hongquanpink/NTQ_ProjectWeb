@@ -7,11 +7,20 @@
 }
 
 <div class="card shadow mb-4">
+
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">DANH SÁCH SẢN PHẨM</h6>
     </div>
 
     <div class="card-body">
+        @if (TempData["CreateProductMesseage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                </button> <h5><i class="icon fas fa-check"></i> @TempData["CreateProductMesseage"]</h5>
+            </div>
+        }
+
         @using (Html.BeginForm("Index", "Product", FormMethod.Get))
         {
             <div class="row">
@@ -31,81 +40,80 @@
                 </div>
             </div>
         }
-        <div class="table-responsive">
+    <div class="table-responsive">
 
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>CateID</th>
+                    <th>ProductName</th>
+                    <th>Images</th>
+                    <th>SLug</th>
+                    <th>Detail</th>
+                    <th>Trending</th>
+                    <th>Status</th>
+                    <th>NumberViews</th>
+                    <th>Price</th>
+                    <th>MetaKey</th>
+                    <th>CreatAt</th>
+                    <th>UpdateAt</th>
+                    <th>DeleteAt</th>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>CateID</th>
+                    <th>ProductName</th>
+                    <th>Images</th>
+                    <th>Slug</th>
+                    <th>Detail</th>
+                    <th>Trending</th>
+                    <th>Status</th>
+                    <th>NumberViews</th>
+                    <th>Price</th>
+                    <th>MetaKey</th>
+                    <th>CreatAt</th>
+                    <th>UpdateAt</th>
+                    <th>DeleteAt</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
                     <tr>
-                        <th>#</th>
-                        <th>CateID</th>
-                        <th>ProductName</th>
-                        <th>Images</th>
-                        <th>SLug</th>
-                        <th>Detail</th>
-                        <th>Trending</th>
-                        <th>Status</th>
-                        <th>NumberViews</th>
-                        <th>Price</th>
-                        <th>MetaKey</th>
-                        <th>CreatAt</th>
-                        <th>UpdateAt</th>
-                        <th>DeleteAt</th>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>#</th>
-                        <th>CateID</th>
-                        <th>ProductName</th>
-                        <th>Images</th>
-                        <th>Slug</th>
-                        <th>Detail</th>
-                        <th>Trending</th>
-                        <th>Status</th>
-                        <th>NumberViews</th>
-                        <th>Price</th>
-                        <th>MetaKey</th>
-                        <th>CreatAt</th>
-                        <th>UpdateAt</th>
-                        <th>DeleteAt</th>
+                        <td id="row_@item.Id">
+                            <a class="btn btn-primary" href="/Admin/Product/Edit/@item.Id">SỬA</a>
+                            |
+                            @Ajax.ActionLink("Xóa", "Delete", new { @id = item.Id }, new AjaxOptions
+                            {
+                                Confirm = "Bạn có muốn xóa bản ghi này không",
+                                OnComplete = "$(' row_" + @item.Id + " ').remove()",
+                                HttpMethod = "Delete"
+                            })
+
+                        </td>
+
+                        <td>@item.CategoryID</td>
+                        <td>@item.ProductName</td>
+                        <td><img src="@item.Path" /></td>
+                        <td>@item.Slug</td>
+                        <td>@item.Detail</td>
+                        <td>@item.Trending</td>
+                        <td>@item.Status</td>
+                        <td>@item.NumberViews</td>
+                        <td>@item.Price</td>
+                        <td>@item.MetaKey</td>
+                        <td>@(item.CreatAt == null ? "" :  item.CreatAt.Value.ToString("dd/MM/yyyy"))</td>
+                        <td>@(item.UpdateAt == null ? "" : item.UpdateAt.Value.ToString("dd/MM/yyyy"))</td>
+                        <td>@(item.DeleteAt == null ? "" : item.DeleteAt.Value.ToString("dd/MM/yyyy"))</td>
                     </tr>
-                </tfoot>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td id="row_@item.Id">
-                                <a class="btn btn-primary" href="/Admin/Product/Edit/@item.Id">SỬA</a>
-                                |
-                                @Ajax.ActionLink("Xóa", "Delete", new { @id = item.Id }, new AjaxOptions
-                                {
-                                    Confirm = "Bạn có muốn xóa bản ghi này không",
-                                    OnComplete = "$(' row_" + @item.Id + " ').remove()",
-                                    HttpMethod = "Delete"
-                                })
-
-                            </td>
-
-                            <td>@item.CategoryID</td>
-                            <td>@item.ProductName</td>
-                            <td><img src="@item.Path" /></td>
-                            <td>@item.Slug</td>
-                            <td>@item.Detail</td>
-                            <td>@item.Trending</td>
-                            <td>@item.Status</td>
-                            <td>@item.NumberViews</td>
-                            <td>@item.Price</td>
-                            <td>@item.MetaKey</td>
-                            <td>@(item.CreatAt == null ? "" :  item.CreatAt.Value.ToString("dd/MM/yyyy"))</td>
-                            <td>@(item.UpdateAt == null ? "" : item.UpdateAt.Value.ToString("dd/MM/yyyy"))</td>
-                            <td>@(item.DeleteAt == null ? "" : item.DeleteAt.Value.ToString("dd/MM/yyyy"))</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            <a class="btn btn-primary" href="/Admin/Product/Creat">Create</a>
-
-            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-        </div>
+                }
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model,page => Url.Action("Index", new{ page }))
+        <a class="btn btn-primary" href="/Admin/Product/Creat">Create</a>
+    </div>
     </div>
 </div>
 

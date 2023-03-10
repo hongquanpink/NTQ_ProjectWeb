@@ -40,6 +40,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                 long ma = dao.Insert(user);
                 if (ma > 0)
                 {
+                    TempData["success"] = "Them user thanh cong";
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -72,6 +73,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
+                    TempData["success"] = "Sua user thanh cong";
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -88,6 +90,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
         public ActionResult Delete(int Id)
         {        
             new UserDao().Delete(Id);
+            TempData["success"] = "Xóa user thanh cong";
             return RedirectToAction("Index");
         }
     }

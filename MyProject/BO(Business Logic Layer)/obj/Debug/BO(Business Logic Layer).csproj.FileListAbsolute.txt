@@ -88,3 +88,5 @@ D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\PagedList.Mvc.dll
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\PagedList.xml
 D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\PagedList.Mvc.xml
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\CKFinder.dll
+D:\THƯCTÂP NTQ-SOLUTION\NTQ_ProjectWeb\MyProject\BO(Business Logic Layer)\bin\CKFinder.pdb

@@ -12,11 +12,11 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         // GET: Admin/Product
-        public ActionResult Index(string isTrending,string notTrend,string searchString,int pages = 1, int pageSizes = 10)
+        public ActionResult Index(string isTrending, string notTrend, string searchString, int pages=1, int pageSize=10)
         {
             var dao = new ProductDao();
             
-            var model = dao.ListAllPaging(isTrending, notTrend, searchString,pages, pageSizes);
+            var model = dao.ListAllPaging(isTrending, notTrend, searchString , pages, pageSize);
             return View(model);
         }
 
@@ -27,7 +27,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Products product)
+        public ActionResult Creat(Products product)
         {
             if (ModelState.IsValid)
             {
@@ -37,6 +37,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                long ma = dao.Insert(product);
                 if (ma > 0)
                 {
+                    TempData["success"] = "Them product thanh cong";
                     return RedirectToAction("Index", "Product");
                 }
                 else
@@ -44,7 +45,8 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Them san pham k thanh cong");
                 }
             }
-            return View("Index");
+            //TempData["CreateProductMesseage"] = "Thêm sản phẩm thành công";
+            return View();
         }
 
         [HttpGet]
@@ -63,6 +65,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                 var result = dao.Update(products);
                 if (result)
                 {
+                    TempData["success"] = "Sửa product thanh cong";
                     return RedirectToAction("Index", "Product");
                 }
                 else
@@ -70,6 +73,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Sua san pham k thanh cong");
                 }
             }
+            
             return RedirectToAction("Index","Product");
         }
 
@@ -77,6 +81,7 @@ namespace BO_Business_Logic_Layer_.Areas.Admin.Controllers
         public ActionResult Delete(int Id)
         {
             new ProductDao().Delete(Id);
+            TempData["success"] = "Xóa product thanh cong";
             return RedirectToAction("Index");
         }
 

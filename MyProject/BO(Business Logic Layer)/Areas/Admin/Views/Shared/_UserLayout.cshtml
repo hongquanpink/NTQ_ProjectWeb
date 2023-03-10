@@ -76,7 +76,6 @@
         </div>
     </div>
     <!-- header section end -->
-
     <!-- furnitures section start -->
     @RenderBody()
     <!-- furnitures section end -->
@@ -450,6 +449,7 @@
         <script src="../../Content/js/bootstrap.bundle.min.js"></script>
         <script src="../../Content/js/jquery-3.0.0.min.js"></script>
         <script src="../../Content/js/plugin.js"></script>
+        <script src="~/Content/js/plugin/ckfinder/ckfinder.js"></script>
         <script src="~/Content/js/jquery.unobtrusive-ajax.min.js"></script>
         <!-- sidebar -->
         <link href="~/Content/PagedList.css" rel="stylesheet" />
@@ -458,6 +458,39 @@
         <!-- javascript -->
         <script src="../../Content/js/owl.carousel.js"></script>
         <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                SetDialog();
+                $("#btnSelectImage").click(function () {
+                    var finder = new CKFinder();
+                    finder.selectActionFunction = function (fileUrl) {
+                        $('#txtImgUrl').val(fileUrl);
+                    };
+                    finder.popup();
+                });
+                try {
+                    var editor = CKEDITOR.replace('contenteditor', {
+                        customConfig: '/Scripts/Plugins/ckeditor/article.js',
+                    });
+                }
+                catch (e) {
+                    console.log(e.message);
+                }
+                $("#datepiler").datepicker({ dateFormat: 'dd/mm/yy' });
+            });
+
+        </script>
+
+        <script>
+        $(document).ready(function () {
+            var message = '@TempData["success"]';
+            if (message) {
+                alert(message);
+            }
+        });
+        </script>
+    </div>
+    @RenderSection("jsFooter", required: false)
 </body>
 </html>
